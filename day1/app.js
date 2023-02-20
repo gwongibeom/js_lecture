@@ -35,3 +35,130 @@ let tmp2 = null
 console.log('🚀 ~ file: app.js:33 ~ null:', null)
 // null 의도적으로 비움
 console.log(typeof tmp2) //오브젝트
+
+console.log(1 + '1')
+console.log(1 - '1')
+
+let tmp3 = 3
+console.log((tmp3 += 1))
+
+console.log(++tmp3)
+
+let array = [1, 2, 3]
+
+// == != === !==
+console.log(3 == '3')
+console.log(3 === '3')
+
+//논리 %% || !
+// && 하나라도 false가 존재하면 false로 반환
+// 하나라도 true가 존재하면 true로 반환
+// ! 반대값을 반환
+
+test = 1
+console.log(test === 1 && true && '야호')
+let anything = 'anything'
+
+true || anything // 하나만 true여도 아니까 true 출력
+false || anything // anything까지 봐야 true니까 anything 출력
+true && anything // 둘다 true인걸 확인해야하니까 anything 출력
+false && anything // false만 봐도 ㅈ된걸 아니까 false 출력
+
+//삼항
+console.log(test > 2 ? '마즘' : '아님')
+
+//제어문 흐름제어
+// 조건문 if
+// 선택문 switch
+// 반복문 for while do while
+
+if (1 > 2) {
+    console.log('whattt')
+} else if (2 > 3) {
+    console.log('whattt')
+} else {
+    console.log('wow')
+}
+
+//선택문
+let flag = 1
+switch (flag) {
+    case 1:
+        console.log('1조건')
+        break
+    case 2:
+        console.log('2조건')
+        break
+    default:
+        console.log('기본')
+}
+
+//반복문
+while (flag < 5) {
+    console.log('Want to go home')
+    flag++
+}
+
+console.log('----------------------------------------------------')
+
+do {
+    console.log(flag)
+    flag++
+} while (flag < 5)
+
+console.log('----------------------------------------------------')
+
+for (let i = 0; i < 5; i++) {
+    console.log(i)
+}
+console.log('----------------------------------------------------')
+//객체
+//1. 내장 객체 date String Array Math
+
+//가장 기본 객체 생성
+const sample = new Object()
+
+//날짜 객체
+const date = new Date('2023,2,1')
+// get~~~ 날짜 가져올때
+// set~~~ 날짜 설정할때
+
+const lastDay = new Date(2023, 11, 13)
+let diff = lastDay.getTime() - date.getTime()
+
+diff = Math.ceil(diff / (1000 * 60 * 60 * 24))
+document.write('<h3>연말까지' + diff + '일 남았습니다.</h3>')
+
+//수학객체
+//0~10 정수 난수 객체
+console.log(Math.floor(Math.random() * 11))
+
+//배열
+const arr = new Array()
+arr[0] = 1
+arr[1] = 2
+
+const arr2 = new Array(1, 2)
+
+const arr3 = [1, 2]
+
+console.log(arr.join(':)'))
+
+arr.reverse()
+arr.sort()
+
+let startIdx = 0
+let endIdx = 1
+console.log(arr.slice(startIdx, endIdx))
+
+arr.concat(arr2)
+arr.pop()
+arr.push(3)
+
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i])
+}
+//2. 브라우저 객체
+// window.location.href = 'http://localhost'
+
+//3. 문서 객체 모델 dom html 문서 구조
