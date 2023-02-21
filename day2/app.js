@@ -53,5 +53,31 @@ console.log(str1.trimStart())
 
 //2. 브라우저 객체
 // window.location.href = 'http://localhost'
+//window 가장 최상위 객체
+//document screen location history navigator
+// window.open('https://google.com', 'naver', 'width=800, height=800', 'scrollbars=no')
+
+// const test = prompt('test', '기본값')
+// console.log('🚀 ~ file: app.js:61 ~ test:', test)
+
+// const test2 = confirm()
+
+// setInterval() 계속해서 일정시간간격으로 함수를 호출
+// setTimeout() 단 한번 일정시간이 흐른 후 함수를 호출
+
+//screen 정보
+console.log(screen.width)
+console.log(screen.height)
+
+console.log(location.href) //접속 url
+console.log(location.host) // 호스트,포트번호
+
+//navigather 현재 사용자가 사용하는 브라우저 정보
+navigator.onLine
+navigator.language
+//history 사용자가 방문한 사이트의 기록 이전 방문 , 다음방문
+// history.length
+// history.back()
+// history.forward()
 
 //3. 문서 객체 모델 dom html 문서 구조
