@@ -1,165 +1,55 @@
-document.write('<h2>js를 시작 했어요</h2>')
-
-// 변수 선언
-var age1 = 18 //쓰지말자
-
-//es6
-const age2 = 18 //정"상수"라 수정 안됨 "마 재할당 하지마라 이거 놔라"
-// age2 = 19 error
-
-let age3 = 18 //수정 및 재할당 가능
-console.log('🚀 ~ file: app.js:11 ~ age3:', age3)
-age3 = 19 // 딱히 뭐 안남 문자열로 바꿔도 에러 안남
-console.log('🚀 ~ file: app.js:13 ~ age3:', age3)
-
-//js에서 사용하는 자료형
-// 1. 문자열
-const name = 'um jun sik'
-// 2. 숫자열 ->
-let num1 = Number('2.4')
-console.log(typeof num1)
-let num2 = Number('2.4살')
-console.log(num2) //nan
-// 3. 논리형
-let isLogined = false
-console.log('🚀 ~ file: app.js:25 ~ false:', false)
-console.log(1 > 0)
-//값이 들어 있는 거 왠만하면 true
-//값이 없거나 부정적인거 왠만하면 false
-
-// 4. 비어있는 데이터 (null, undefined)
-let tmp
-console.log('🚀 ~ file: app.js:30 ~ tmp:', tmp)
-// undefiend 의도하지 않았는데 값이 비어 있음
-let tmp2 = null
-console.log('🚀 ~ file: app.js:33 ~ null:', null)
-// null 의도적으로 비움
-console.log(typeof tmp2) //오브젝트
-
-console.log(1 + '1')
-console.log(1 - '1')
-
-let tmp3 = 3
-console.log((tmp3 += 1))
-
-console.log(++tmp3)
-
-let array = [1, 2, 3]
-
-// == != === !==
-console.log(3 == '3')
-console.log(3 === '3')
-
-//논리 %% || !
-// && 하나라도 false가 존재하면 false로 반환
-// 하나라도 true가 존재하면 true로 반환
-// ! 반대값을 반환
-
-test = 1
-console.log(test === 1 && true && '야호')
-let anything = 'anything'
-
-true || anything // 하나만 true여도 아니까 true 출력
-false || anything // anything까지 봐야 true니까 anything 출력
-true && anything // 둘다 true인걸 확인해야하니까 anything 출력
-false && anything // false만 봐도 ㅈ된걸 아니까 false 출력
-
-//삼항
-console.log(test > 2 ? '마즘' : '아님')
-
-//제어문 흐름제어
-// 조건문 if
-// 선택문 switch
-// 반복문 for while do while
-
-if (1 > 2) {
-    console.log('whattt')
-} else if (2 > 3) {
-    console.log('whattt')
-} else {
-    console.log('wow')
-}
-
-//선택문
-let flag = 1
-switch (flag) {
-    case 1:
-        console.log('1조건')
-        break
-    case 2:
-        console.log('2조건')
-        break
-    default:
-        console.log('기본')
-}
-
-//반복문
-while (flag < 5) {
-    console.log('Want to go home')
-    flag++
-}
-
-console.log('----------------------------------------------------')
-
-do {
-    console.log(flag)
-    flag++
-} while (flag < 5)
-
-console.log('----------------------------------------------------')
-
-for (let i = 0; i < 5; i++) {
-    console.log(i)
-}
-console.log('----------------------------------------------------')
-//객체
-//1. 내장 객체 date String Array Math
-
-//가장 기본 객체 생성
-const sample = new Object()
-
-//날짜 객체
-const date = new Date('2023,2,1')
-// get~~~ 날짜 가져올때
-// set~~~ 날짜 설정할때
-
-const lastDay = new Date(2023, 11, 13)
-let diff = lastDay.getTime() - date.getTime()
-
-diff = Math.ceil(diff / (1000 * 60 * 60 * 24))
-document.write('<h3>연말까지' + diff + '일 남았습니다.</h3>')
-
-//수학객체
-//0~10 정수 난수 객체
-console.log(Math.floor(Math.random() * 11))
-
-//배열
-const arr = new Array()
-arr[0] = 1
-arr[1] = 2
-
-const arr2 = new Array(1, 2)
-
-const arr3 = [1, 2]
-
-console.log(arr.join(':)'))
-
-arr.reverse()
-arr.sort()
-
-let startIdx = 0
-let endIdx = 1
-console.log(arr.slice(startIdx, endIdx))
-
-arr.concat(arr2)
-arr.pop()
-arr.push(3)
-
-for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i])
-}
-
 // 문자열 String Object : 문자형 데이터를 객체로 취급
+
+//문자열 객체 생성
+
+let str1 = 'Hi!'
+str1 = new String('Hello, world! world!')
+
+str1.charAt(1)
+console.log('🚀 ~ file: app.js:10 ~ str1.charAt(1):', str1.charAt(1))
+
+//일치하는 문자를 찾아 제일 먼저 일치하는 문자의 인덱스 번호
+console.log("🚀 ~ file: app.js:13 ~ str1.indexOf('world'):", str1.indexOf('world'))
+
+//일치하는 문자를 찾아 제일 마지막에 일치하는 문자의 인덱스 번호
+console.log(
+    "🚀 ~ file: app.js:14 ~ str1.lastIndexOf('world'):",
+    str1.lastIndexOf('world')
+)
+
+//문자열에서 왼쪽으로 일치하는 문자를 찾아 제일 먼저 찾은 문자 반환
+console.log(str1.match('world'))
+
+//제일 먼저 원하는 문자를 치완함
+console.log(str1.replace('world', 'seoul'))
+console.log(str1)
+
+// indexof와 search의 차이점
+//indexOf(): 문자열과 일치하는 데이터
+//search():문자열,정규표현식,문자패턴과 일치하는 데이터
+console.log(str1.search('world'))
+
+//slice()
+console.log(str1.slice(7, 20))
+//a개의 문자를 자르고 (선택)b번째까지 살린다
+
+//substring() 문자열 a~b까지를 반환 b는 포함 되지 않음
+console.log(str1.substring(0, 6))
+
+//split() 구분 문자를 기준으로 문자 데이터를 쪼개서 배열에 저장 후 반환
+console.log(str1.split(','))
+
+// toUpperCase,tolowerCase
+console.log(str1.toUpperCase())
+console.log(str1.toLowerCase())
+
+//글자수
+console.log(str1.length)
+
+//concat
+console.log(str1.concat(' 2023! '))
+//trim 문자열의 양쪽 공백을 제거
+console.log(str1.trimStart())
 
 //2. 브라우저 객체
 // window.location.href = 'http://localhost'
